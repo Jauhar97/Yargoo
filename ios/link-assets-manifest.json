@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "android/app/src/main/assets/fonts/OpenSans-Bold.ttf",
-      "sha1": "c1691e8168b2596af8a00162bac60dbe605e9e36"
-    },
-    {
       "path": "android/app/src/main/assets/fonts/OpenSans-BoldItalic.ttf",
       "sha1": "cea7b25e625f8f42d09c3034aad8afd826e9941a"
     },
@@ -40,6 +36,10 @@
     {
       "path": "android/app/src/main/assets/fonts/OpenSans-SemiboldItalic.ttf",
       "sha1": "f577ce4322c761a10d093f11f077a48602d2c076"
+    },
+    {
+      "path": "android/app/src/main/assets/fonts/SansBold.ttf",
+      "sha1": "c1691e8168b2596af8a00162bac60dbe605e9e36"
     }
   ]
 }

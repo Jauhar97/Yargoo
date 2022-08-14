@@ -5,12 +5,12 @@ import Button from '../Components/Button'
 import LinearGradient from 'react-native-linear-gradient'
 import Color from '../config/Color'
 
-export default function Signup() {
+export default function Signup({props, navigation}) {
   return (
     <>
     <SafeAreaView>
       <View>
-             <LinearGradient start={{x: 0.5, y: 1}} end={{x:1, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
+             <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
                  <Text style={styles.buttonText}>
                     Sign-Up
                  </Text>
@@ -27,11 +27,11 @@ export default function Signup() {
              <View style={{width:350, height:70, backgroundColor:Color.YarB, top:180, alignSelf:'center', borderRadius:15,}}>
                    
                    
-                   <Text style={{top:25, left:70, color:'white', fontSize:17,fontFamily:'OpenSans-Semibold'}}>SIGN-UP WITH YOUR EMAIL</Text>
+                   <Text style={{top:25, left:70, color:'white', fontSize:17,fontFamily:'OpenSans-Semibold'}} onPress={()=>navigation.navigate('Login')}>SIGN-UP WITH YOUR EMAIL</Text>
                   <Text style={{top:70, fontSize:14, alignSelf:'center', }} >By singing up, you accept our t&cs and privacy policy</Text>
                   <Text style={{fontSize:20, top:80, alignContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center', top:120}}>In publishing and graphic design, Lorem ipsum is a placeholder text 
                     commonly used to demonstrate </Text>
-                  <Text style={{}}>English</Text>
+                  {/* <Text style={{}}>English</Text> */}
                     {/*<View style={{marginTop:200}}></View> */}
              </View>
       </View>

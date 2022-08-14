@@ -3,7 +3,7 @@ export default{
     YarG:'#4FA0A5',
     white:'#ffff',
     lightwhite:'#F6F6F6',
-    lightgray:'#AAAAAA',
+    lightgray:'#D3D3D3',
     shadegray:'#707070',
     darkgray:"#747474",
     popupcolor:'#FBFBFB',
