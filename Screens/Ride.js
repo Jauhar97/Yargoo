@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ImageBackground } from 'react-native'
 import React from 'react'
 
 export default function Ride() {
+ 
   return (
     <View>
       <Text>Ride</Text>
@@ -9,4 +10,6 @@ export default function Ride() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  
+})
