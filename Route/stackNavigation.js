@@ -16,6 +16,12 @@ import Stop from '../App/Screen/Stop';
 import Addstop from '../App/Screen/Addstop';
 import Calender from '../App/Screen/Calender';
 import Counter from '../App/Screen/Counter';
+import Price from '../App/Screen/Price';
+import Description from '../App/Screen/Description';
+import Publish from '../App/Screen/Publish';
+import Rideinfo from '../App/Screen/Rideinfo';
+import CurrentRide from '../App/Screen/CurrentRide'
+import Extrapackage from '../App/Screen/Extrapackage';
 const Stack = createNativeStackNavigator();
 
 
@@ -27,6 +33,12 @@ const StackScreen = () => {
   }} >
                 <Stack.Screen name='tabs' component={MyTabs}/>
                 <Stack.Screen name='Signup' component={Signup}/>
+                <Stack.Screen name='Extrapackage' component={Extrapackage}/>
+                <Stack.Screen name='CurrentRide' component={CurrentRide}/>
+                <Stack.Screen name='Rideinfo' component={Rideinfo}/>
+                <Stack.Screen name='Publish' component={Publish}/>
+                <Stack.Screen name='Description' component={Description}/>
+                <Stack.Screen name='Price' component={Price}/>
                 <Stack.Screen name='Counter' component={Counter}/>
                 <Stack.Screen name='Calender' component={Calender}/>
                 <Stack.Screen name='Addstop' component={Addstop}/>

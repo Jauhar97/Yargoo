@@ -33,6 +33,7 @@ export default function Calender({props, navigation}) {{
                     Calender
                  </Text>
             </LinearGradient>
+            <Text style={{ color:Color.YarB,fontFamily:'SansBold',fontSize:25, left:10, top:10}}>When are you going?</Text>
             <View
             style={styles.Calender}
             >
@@ -61,14 +62,14 @@ const styles = StyleSheet.create({
         // marginTop: 100,
       },
     Calender:{
-    //    top:100,
+       top:40,
 
       },
       buttonText:{
-        fontSize:40,
-        fontFamily:'OpenSans-Bold',
+        fontSize:30,
+        fontFamily:'SansBold',
         left:45,
-        // top:-4,
+        top:-18,
         bottom:25,
         color:'white'
     },
