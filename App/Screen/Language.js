@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { RadioButton } from 'react-native-paper';
 import Color from '../config/Color';
-export default function Language() {
+export default function Language({prop, navigation}) {
     const [checked, setChecked] = React.useState('first');
     
   return (
@@ -141,7 +141,9 @@ export default function Language() {
       />
       </View>
     </TouchableOpacity>
-    <View style={{width:320, height:60,backgroundColor:Color.YarB,alignSelf:'center', borderRadius:30, top:150}}>
+    <View style={{width:320, height:60,backgroundColor:Color.YarB,alignSelf:'center', borderRadius:30, top:150}}
+    onStartShouldSetResponder={()=>navigation.navigate('tabs')}
+    >
         <Text style={{alignSelf:'center', color:Color.white, fontFamily:'SansBold', fontSize:25,top:10}}>Choose</Text>
     </View>
     </View>

@@ -71,12 +71,15 @@ export default function Inbox() {
    
     <FlatList
     data={Data}
+    
     keyExtractor={item=>item.id}
     renderItem={({item}) =>(
       <>
-      <View >
+      <View style={{}}>
         <Text style={styles.name}>{item.username}</Text>
+        
         <Image style={styles.profile} source={item.pic}/>
+        
         <Text style={styles.message}>{item.message}</Text>
         <Text style={styles.time}>{item.time}</Text>
       </View>
@@ -95,8 +98,7 @@ const styles = StyleSheet.create({
   name:{
     fontFamily:'OpenSans-Semibold',
     fontSize:18,
-    bottom:10,
-    top:25,
+    
     left:90,
     color:'black'
   },
@@ -104,12 +106,13 @@ const styles = StyleSheet.create({
     width:70,
     height:70,
     borderRadius:35,
-    left:10
+    left:10,
+    
   },
   message:{
     fontFamily:'OpenSans-Regular',
     left:90,
-    bottom:40,
+   
     maxWidth:300,
     color:Color.lightgray
   
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
     fontFamily:'OpenSans-Regular',
     fontSize:10,
     left:300,
-    bottom:100,
+   
     fontWeight:'bold',
     color:Color.darkgray
   },
@@ -126,8 +129,8 @@ const styles = StyleSheet.create({
     fontSize:30,
     fontFamily:'SansBold',
     left:45,
-    top:-18,
-    bottom:25,
+    
+    bottom:18,
     color:'white'
 },
 })

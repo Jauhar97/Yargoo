@@ -22,6 +22,8 @@ import Publish from '../App/Screen/Publish';
 import Rideinfo from '../App/Screen/Rideinfo';
 import CurrentRide from '../App/Screen/CurrentRide'
 import Extrapackage from '../App/Screen/Extrapackage';
+import Credentials from '../Sign up for driver/Credentials';
+import Profileinfo from '../Sign up for driver/Profileinfo'
 const Stack = createNativeStackNavigator();
 
 
@@ -31,8 +33,10 @@ const StackScreen = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
-                <Stack.Screen name='tabs' component={MyTabs}/>
                 <Stack.Screen name='Signup' component={Signup}/>
+                <Stack.Screen name='tabs' component={MyTabs}/>
+                <Stack.Screen name='Credentials' component={Credentials}/>
+                <Stack.Screen name='Profileinfo' component={Profileinfo}/>
                 <Stack.Screen name='Extrapackage' component={Extrapackage}/>
                 <Stack.Screen name='CurrentRide' component={CurrentRide}/>
                 <Stack.Screen name='Rideinfo' component={Rideinfo}/>
