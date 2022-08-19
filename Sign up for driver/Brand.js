@@ -29,7 +29,7 @@ export default function Brand({prop, navigation}) {
     <View style={{flexDirection:'row',}}>
         <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Maruti</Text>
         <AntDesign name='right' color={Color.YarB} size={20} style={{left:280, top:5 }}
-        onPress={()=>navigation.navigate('')}
+        onPress={()=>navigation.navigate('Model')}
         ></AntDesign>
     </View>
     <View style={{flexDirection:'row', margintop:10}}>

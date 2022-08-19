@@ -11,7 +11,7 @@ import Inbox from '../Screens/Inbox';
 import Offer from '../Screens/Offer';
 import Profile from '../Screens/Profile';
 import Ride from '../Screens/Ride';
-import Search from '../Screens/Search';
+import Seacrh from '../Screens/Seacrh';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -44,17 +44,6 @@ const MyTabs = () => {
           }}
       />
       <Tab.Screen 
-      name="Search" 
-      component={Search} 
-      options={{
-        tabBarLabel:false,
-        tabBarIcon: ({focused, tintColor}) => (
-          <Image 
-          style={{...styles.image, tintColor: focused ? '#0fd3bb' : 'black'}} 
-          source={Searchp} />
-        ),
-      }}/>
-      <Tab.Screen 
       name="Offer" 
       component={Offer} 
       options={{
@@ -63,6 +52,17 @@ const MyTabs = () => {
           <Image 
           style={{...styles.image, tintColor: focused ? '#0fd3bb' : 'black'}} 
           source={Offerp} />
+        ),
+      }}/>
+      <Tab.Screen 
+      name="Seacrh" 
+      component={Seacrh} 
+      options={{
+        tabBarLabel:false,
+        tabBarIcon: ({focused, tintColor}) => (
+          <Image 
+          style={{...styles.image, tintColor: focused ? '#0fd3bb' : 'black'}} 
+          source={Searchp} />
         )
       }}
       />

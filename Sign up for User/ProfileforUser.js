@@ -3,7 +3,7 @@ import React,{ useState} from 'react'
 import Color from '../App/config/Color'
 import DropDownPicker from 'react-native-dropdown-picker'
 
-export default function Profileinfo({prop, navigation}) {
+export default function ProfileforUser({prop, navigation}) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([

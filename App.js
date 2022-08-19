@@ -10,13 +10,17 @@ import Credentials from './Sign up for driver/Credentials'
 import Profileinfo from './Sign up for driver/Profileinfo'
 import License from './Sign up for driver/License'
 import Brand from './Sign up for driver/Brand'
+import Model from './Sign up for driver/Model'
+import Kind from './Sign up for driver/Kind'
+import Coluor from './Sign up for driver/Coluor'
+import ColorPicker from './Sign up for driver/ColorPicker'
+import Credentialforuser from './Sign up for User/Credentialforuser'
+import ProfileforUser from './Sign up for User/ProfileforUser'
 
 export default function App() {
   return (
-  
- <Brand></Brand>
-
-  )
+<StackScreen></StackScreen>
+)
 }
 
 const styles = StyleSheet.create({

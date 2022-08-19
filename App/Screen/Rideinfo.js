@@ -35,7 +35,7 @@ export default function Rideinfo({prop, navigation}) {
         source={require('../assets/map.png')}
         ></Image>
        <View style={{width:190, height:70, backgroundColor:Color.YarB,alignSelf:'center',  borderRadius:50, top:180}}
-        onStartShouldSetResponder={()=>navigation.navigate('Search')}
+        onStartShouldSetResponder={()=>navigation.navigate('Offer')}
         >
                 <Text style={{alignSelf:'center', top:20, fontFamily:'SansBold',fontSize:20 , color:Color.white}}>Continue</Text>
             </View>

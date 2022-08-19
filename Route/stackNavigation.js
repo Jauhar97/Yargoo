@@ -10,7 +10,7 @@ import Inbox from '../Screens/Inbox';
 import Offer from '../Screens/Offer';
 import Profile from '../Screens/Profile';
 import Ride from '../Screens/Ride';
-import Seacrh from '../Screens/Search';
+import Seacrh from '../Screens/Seacrh';
 import Dropoff from '../App/Screen/Dropoff';
 import Stop from '../App/Screen/Stop';
 import Addstop from '../App/Screen/Addstop';
@@ -24,6 +24,17 @@ import CurrentRide from '../App/Screen/CurrentRide'
 import Extrapackage from '../App/Screen/Extrapackage';
 import Credentials from '../Sign up for driver/Credentials';
 import Profileinfo from '../Sign up for driver/Profileinfo'
+import License from '../Sign up for driver/License';
+import Brand from '../Sign up for driver/Brand';
+import Model from '../Sign up for driver/Model';
+import Kind from '../Sign up for driver/Kind';
+import Coluor from '../Sign up for driver/Coluor';
+import ColorPicker from '../Sign up for driver/ColorPicker';
+// import Datefilter from '../Screens/Datefilter';
+import Basicfilter from '../Screens/Searchfilters/Basicfilter';
+import CardOpen from '../Screens/Searchfilters/CardOpen';
+// import Timefilter from '../Screens/Searchfilters/Timefilter';
+import Card from '../App/Components/Card';
 const Stack = createNativeStackNavigator();
 
 
@@ -33,10 +44,21 @@ const StackScreen = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
-                <Stack.Screen name='Signup' component={Signup}/>
                 <Stack.Screen name='tabs' component={MyTabs}/>
+                <Stack.Screen name='Signup' component={Signup}/>
+                <Stack.Screen name='Card' component={Card}/>
                 <Stack.Screen name='Credentials' component={Credentials}/>
+                <Stack.Screen name='CardOpen' component={CardOpen}/>
+                {/* <Stack.Screen name='Timefilter' component={Timefilter}/> */}
                 <Stack.Screen name='Profileinfo' component={Profileinfo}/>
+                <Stack.Screen name='Basicfilter' component={Basicfilter}/>
+                {/* <Stack.Screen name='Datefilter' component={Datefilter}/> */}
+                <Stack.Screen name='License' component={License}/>
+                <Stack.Screen name='Brand' component={Brand}/>
+                <Stack.Screen name='Model' component={Model}/>
+                <Stack.Screen name='Kind' component={Kind}/>
+                <Stack.Screen name='Coluor' component={Coluor}/>
+                <Stack.Screen name='ColorPicker' component={ColorPicker}/>
                 <Stack.Screen name='Extrapackage' component={Extrapackage}/>
                 <Stack.Screen name='CurrentRide' component={CurrentRide}/>
                 <Stack.Screen name='Rideinfo' component={Rideinfo}/>

@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import DropDownPicker from 'react-native-dropdown-picker'
 
-export default function License() {
+export default function License({prop, navigation}) {
     const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -52,7 +52,7 @@ export default function License() {
 
 </TextInput>
 <View style={{width:190, height:70, backgroundColor:Color.YarB,alignSelf:'center', bottom:200, borderRadius:50}}
-        onStartShouldSetResponder={()=>navigation.navigate('Publish')}
+        onStartShouldSetResponder={()=>navigation.navigate('Brand')}
         >
                 <Text style={{alignSelf:'center', top:20, fontFamily:'SansBold',fontSize:20 , color:Color.white}}>Continue</Text>
             </View>
