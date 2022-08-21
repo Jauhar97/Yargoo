@@ -35,6 +35,9 @@ import Basicfilter from '../Screens/Searchfilters/Basicfilter';
 import CardOpen from '../Screens/Searchfilters/CardOpen';
 // import Timefilter from '../Screens/Searchfilters/Timefilter';
 import Card from '../App/Components/Card';
+import ChatScreen from '../Screens/ChatScreen';
+import Searchpick from '../Screens/Searchpick';
+import Searchdrop from '../Screens/Searchdrop';
 const Stack = createNativeStackNavigator();
 
 
@@ -46,6 +49,9 @@ const StackScreen = () => {
   }} >
                 <Stack.Screen name='tabs' component={MyTabs}/>
                 <Stack.Screen name='Signup' component={Signup}/>
+                <Stack.Screen name='Searchpick' component={Searchpick}/>
+                <Stack.Screen name='Searchdrop' component={Searchdrop}/>
+                <Stack.Screen name='ChatScreen' component={ChatScreen}/>
                 <Stack.Screen name='Card' component={Card}/>
                 <Stack.Screen name='Credentials' component={Credentials}/>
                 <Stack.Screen name='CardOpen' component={CardOpen}/>

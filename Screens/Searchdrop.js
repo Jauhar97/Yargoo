@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View , ImageBackground,ScrollView} from 'react-native'
 import React from 'react'
-import Color from '../config/Color'
+import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-export default function Dropoff({prop, navigation}) {
-    const image = require('../assets/map.png')
+export default function Searchdrop({navigation}) {
+    const image = require('../App/assets/map.png')
   return (
     <View style={styles.container}>
       <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
@@ -17,7 +17,7 @@ export default function Dropoff({prop, navigation}) {
       {/* <ScrollView alwaysBounceVertical={true} style={{flex:1}}> */}
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       {/* <Text style={styles.text}>Inside</Text> */}
-      <View style={styles.dropoff} onStartShouldSetResponder={()=>navigation.navigate('Stop')}>
+      <View style={styles.dropoff} onStartShouldSetResponder={()=>navigation.pop(2)}>
         <Text style={styles.text}>Set Route
         </Text>
       </View>

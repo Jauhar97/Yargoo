@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View,FlatList, Image} from 'react-native'
+import { StyleSheet, Text, View,FlatList, Image,TextInput,TouchableOpacity} from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import Seacrh from './Seacrh'
 
 
-export default function Inbox() {
+
+export default function Inbox({prop, navigation}) {
   const Data=[
     {
       id:1,
@@ -68,22 +70,36 @@ export default function Inbox() {
                    Inbox
                  </Text>
         </LinearGradient>
-   
+        <TextInput
+          style={{backgroundColor:Color.lightgray, width:370, height:50, borderRadius:15,marginTop:80, position:'absolute',
+                  alignSelf:'center'
+        }}
+        placeholder='Search'
+        placeholderTextColor={Color.white}
+
+          >
+            <AntDesign name='search1' size={30} color={Color.white} style={{left:50}}></AntDesign>
+
+          </TextInput>
+        <View style={{marginTop:60, }}>
+         
+        </View>
     <FlatList
     data={Data}
     
     keyExtractor={item=>item.id}
     renderItem={({item}) =>(
       <>
-      <View style={{}}>
+      <TouchableOpacity
+               onPress={()=> navigation.navigate('ChatScreen')}>
+      
+      <View style={{flexDirection:'row', flex:1, padding:10}}>
+      <Image style={styles.profile} source={item.pic}/>
         <Text style={styles.name}>{item.username}</Text>
-        
-        <Image style={styles.profile} source={item.pic}/>
-        
-        <Text style={styles.message}>{item.message}</Text>
+        <Text numberOfLines={2} style={styles.message}>{item.message}</Text>
         <Text style={styles.time}>{item.time}</Text>
       </View>
-      
+      </TouchableOpacity>
       </>
     )}
 >
@@ -98,39 +114,43 @@ const styles = StyleSheet.create({
   name:{
     fontFamily:'OpenSans-Semibold',
     fontSize:18,
-    
-    left:90,
-    color:'black'
+    color:'black',
+    marginLeft:90,
+    top:10,
+    position:'absolute'
   },
   profile:{
     width:70,
     height:70,
     borderRadius:35,
-    left:10,
+    // top:10,
+    
+    // right:80
+   
     
   },
   message:{
     fontFamily:'OpenSans-Regular',
-    left:90,
-   
-    maxWidth:300,
+    marginTop:25,
+    left:10,
+    marginRight:70,
     color:Color.lightgray
   
   },
   time:{
     fontFamily:'OpenSans-Regular',
     fontSize:10,
+    position:"absolute",
     left:300,
-   
+    top:15,
     fontWeight:'bold',
     color:Color.darkgray
   },
   buttonText:{
     fontSize:30,
     fontFamily:'SansBold',
-    left:45,
-    
-    bottom:18,
+    left:50,
+    bottom:20,
     color:'white'
 },
 })

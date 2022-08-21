@@ -1,38 +1,61 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Container, Header, Item, Input, Button, Tab, Tabs } from 'native-base';
-import Color from '../App/config/Color';
+import React from 'react';
+import { StyleSheet,
+Text, 
+View } from 'react-native';
+import { Tab } from "@rneui/themed";
+// import Color from '../App/config/Color';
 
 
- function Profile() {
+export default function Profile() {
   return (
-    <View>
-     <Tabs tabContainerStyle={{ elevation: 0, width:'90%', alignSelf:'center',marginTop:5,alignContent:'center' }} 
-                  tabBarUnderlineStyle={{ backgroundColor: '#0fd3bb', height: 0,width:50,marginLeft:30,}}>
-        <Tab
-            tabStyle={{ backgroundColor:Color.white, }}
-            activeTabStyle={{ backgroundColor: Color.white, }}
-            textStyle={{ color: '#030303', fontWeight: 'bold' }}
-            activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20 }}
-            heading="About">
+    // <View>
+    //  <Tabs tabContainerStyle={{ elevation: 0, width:'90%', alignSelf:'center',marginTop:5,alignContent:'center' }} 
+    //               tabBarUnderlineStyle={{ backgroundColor: '#0fd3bb', height: 0,width:50,marginLeft:30,}}>
+    //     <Tab
+    //         tabStyle={{ backgroundColor:'white', }}
+    //         activeTabStyle={{ backgroundColor: 'white', }}
+    //         textStyle={{ color: '#030303', fontWeight: 'bold' }}
+    //         activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20 }}
+    //         heading={
+    //           <TabHeading>
+    //             <Icon></Icon>
+    //           </TabHeading>
+    //         }>
                     
-                        
-               <Text>Furqan</Text>
-        </Tab>
-        <Tab
-                    tabStyle={{ backgroundColor: Color.white , }}
-                    activeTabStyle={{ backgroundColor: Color.white , }}
-                    textStyle={{ color: '#030303', fontWeight: 'bold',alignSelf:'center' }}
-                    activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20,alignSelf:'center' }}
-                    heading="Gigs">
-                   <Text>hassan</Text>
-        </Tab>            
-    </Tabs>
+    //         {/* <View>
+    //            <Text>Furqan</Text>
+    //            </View> */}
+    //     </Tab>
+    //     <Tab
+    //                 tabStyle={{ backgroundColor: 'white' , }}
+    //                 activeTabStyle={{ backgroundColor: 'white' , }}
+    //                 textStyle={{ color: '#030303', fontWeight: 'bold',alignSelf:'center' }}
+    //                 activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20,alignSelf:'center' }}
+    //                 heading="Gigs">
+    //                {/* <Text>hassan</Text> */}
+    //     </Tab>            
+    // </Tabs>
+    // </View>
+    <View>
+      <Tab value={0} variant="primary" scrollable>
+  <Tab.Item
+    containerStyle={(active) => ({
+      backgroundColor: active ? "red" : undefined,
+    })}
+  >
+    Tab
+  </Tab.Item>
+  <Tab.Item
+    buttonStyle={(active) => ({
+      backgroundColor: active ? "red" : undefined,
+    })}
+  >
+    Tab
+  </Tab.Item>
+</Tab>
     </View>
-  )
-}
-export default Profile
-
-const styles = StyleSheet.create({
     
-})
+  );
+};
+
+
