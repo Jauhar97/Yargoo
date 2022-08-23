@@ -1,53 +1,32 @@
 import React from 'react';
 import { StyleSheet,
 Text, 
-View } from 'react-native';
+View,
+ScrollView ,
+Image} from 'react-native';
 import { Tab , TabView} from "@rneui/themed";
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient';
+
 // import Color from '../App/config/Color';
 
 
 export default function Profile() {
   const [index, setIndex] = React.useState(0);
   return (
-    // <View>
-    //  <Tabs tabContainerStyle={{ elevation: 0, width:'90%', alignSelf:'center',marginTop:5,alignContent:'center' }} 
-    //               tabBarUnderlineStyle={{ backgroundColor: '#0fd3bb', height: 0,width:50,marginLeft:30,}}>
-    //     <Tab
-    //         tabStyle={{ backgroundColor:'white', }}
-    //         activeTabStyle={{ backgroundColor: 'white', }}
-    //         textStyle={{ color: '#030303', fontWeight: 'bold' }}
-    //         activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20 }}
-    //         heading={
-    //           <TabHeading>
-    //             <Icon></Icon>
-    //           </TabHeading>
-    //         }>
-                    
-    //         {/* <View>
-    //            <Text>Furqan</Text>
-    //            </View> */}
-    //     </Tab>
-    //     <Tab
-    //                 tabStyle={{ backgroundColor: 'white' , }}
-    //                 activeTabStyle={{ backgroundColor: 'white' , }}
-    //                 textStyle={{ color: '#030303', fontWeight: 'bold',alignSelf:'center' }}
-    //                 activeTextStyle={{ color: '#030303', fontWeight: 'bold', fontSize: 20,alignSelf:'center' }}
-    //                 heading="Gigs">
-    //                {/* <Text>hassan</Text> */}
-    //     </Tab>            
-    // </Tabs>
-    // </View>
+   
 <View style={{backgroundColor:'white', flex:1}}>
   <View
-  style={{height:188}}
+  style={{height:195}}
   >
     <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:250, }}>
                 {/* <AntDesign name='arrowleft' color={'white'} size={30} style={{top:20, left:10}}></AntDesign>
                  <Text style={styles.buttonText}>
                     Calender
                  </Text> */}
+                 <Text style={{fontFamily:'SansBold', fontSize:20, color:'white', top:20, left:10}}>Profile</Text>
+                <Image style={{width:150, height:150, alignSelf:'center'}} source={require('../App/assets/Picprofile.png')}></Image>
+                <Text style={{alignSelf:'center', fontFamily:'SansBold', fontSize:20, bottom:20, color:Color.white}}>Sagar</Text>
     </LinearGradient>
   </View>
   <>
@@ -77,13 +56,69 @@ export default function Profile() {
     </Tab>
 
     <TabView value={index} onChange={setIndex} animationType="spring">
-      <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
-        <Text h1>Recent</Text>
+      <TabView.Item style={{  width: '100%' }}>
+       
+        <View>
+        <Text style={{fontFamily:'SansBold', top:10, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>About you</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:40, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Write my mini bio
+          </Text>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:75, alignSelf:'center'}}></View>
+          <Text style={{fontFamily:'SansBold', top:90, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Verification</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:120, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Verify my id
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:150, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          +91 8557932127
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:180, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          Verify Sagarsonil3@gmail.com
+          </Text>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:220, alignSelf:'center'}}></View>
+          <Text style={{fontFamily:'SansBold', top:240, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Car</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:260, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          Add car
+          </Text>
+        </View>
+        {/* <Text style={{fontFamily:'SansBold', top:90, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}> Write My mini bio</Text> */}
       </TabView.Item>
-      <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
-        <Text h1>Favorite</Text>
-      </TabView.Item>
+      {/* <ScrollView horizontal={false} > */}
+      <TabView.Item style={{  width: '100%' }}>
       
+        <View>
+        
+        <Text style={{fontFamily:'SansBold', top:10, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Your stats</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:40, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Your rating
+          </Text>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:75, alignSelf:'center'}}></View>
+          <Text style={{fontFamily:'SansBold', top:90, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Setting</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:120, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Notification
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:150, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          Change password
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:180, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          Postal address
+          </Text>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:220, alignSelf:'center'}}></View>
+          <Text style={{fontFamily:'SansBold', top:240, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Money</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:270, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Available fund
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:295, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Payments
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:320, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Bank details
+          </Text>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:345 , alignSelf:'center'}}></View>
+          <Text style={{fontFamily:'SansBold', top:350, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>About</Text>
+          </View>
+          
+      </TabView.Item>
+      {/*    */}
     </TabView>
   </>
     </View>
