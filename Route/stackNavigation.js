@@ -38,6 +38,8 @@ import Card from '../App/Components/Card';
 import ChatScreen from '../Screens/ChatScreen';
 import Searchpick from '../Screens/Searchpick';
 import Searchdrop from '../Screens/Searchdrop';
+import Ongoingrides from '../Screens/Ongoingrides';
+import Publishedrides from '../Screens/Publishedrides';
 const Stack = createNativeStackNavigator();
 
 
@@ -50,6 +52,8 @@ const StackScreen = () => {
                 <Stack.Screen name='tabs' component={MyTabs}/>
                 <Stack.Screen name='Signup' component={Signup}/>
                 <Stack.Screen name='Searchpick' component={Searchpick}/>
+                <Stack.Screen name='Ongoingrides' component={Ongoingrides}/>
+                <Stack.Screen name='Publishedrides' component={Publishedrides}/>
                 <Stack.Screen name='Searchdrop' component={Searchdrop}/>
                 <Stack.Screen name='ChatScreen' component={ChatScreen}/>
                 <Stack.Screen name='Card' component={Card}/>

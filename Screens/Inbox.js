@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,FlatList, Image,TextInput,TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View,FlatList, Image,TextInput,TouchableOpacity, SafeAreaView} from 'react-native'
 import React from 'react'
 
 import Color from '../App/config/Color'
