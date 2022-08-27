@@ -40,6 +40,9 @@ import Searchpick from '../Screens/Searchpick';
 import Searchdrop from '../Screens/Searchdrop';
 import Ongoingrides from '../Screens/Ongoingrides';
 import Publishedrides from '../Screens/Publishedrides';
+import ProfileforUser from '../Sign up for User/ProfileforUser'
+import Credentialforuser from '../Sign up for User/Credentialforuser'
+import Bio from '../Screens/Bio';
 const Stack = createNativeStackNavigator();
 
 
@@ -49,8 +52,12 @@ const StackScreen = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
+    <Stack.Screen name='Signup' component={Signup}/>
                 <Stack.Screen name='tabs' component={MyTabs}/>
-                <Stack.Screen name='Signup' component={Signup}/>
+                {/* <Stack.Screen name='Signup' component={Signup}/> */}
+                <Stack.Screen name='Bio' component={Bio}/>
+                <Stack.Screen name='ProfileforUser' component={ProfileforUser}/>
+                <Stack.Screen name='Credentialforuser' component={Credentialforuser}/>
                 <Stack.Screen name='Searchpick' component={Searchpick}/>
                 <Stack.Screen name='Ongoingrides' component={Ongoingrides}/>
                 <Stack.Screen name='Publishedrides' component={Publishedrides}/>

@@ -172,7 +172,7 @@ export default function ColorPicker({prop, navigation}) {
     </TouchableOpacity>
     <View
     style={{width:250, height:60, backgroundColor:Color.YarB,borderRadius:30, top:190, alignSelf:'center'}}
-    onStartShouldSetResponder={()=>navigation.navigate('Credentials')}
+    onStartShouldSetResponder={()=>navigation.navigate('Profile')}
     >
         <Text style={{color:'white', fontFamily:'SansBold', alignSelf:'center', top:8, fontSize:30}}>Save</Text>
 

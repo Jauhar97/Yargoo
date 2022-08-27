@@ -17,7 +17,7 @@ export default function Signup({props, navigation}) {
   return (
     <>
     <SafeAreaView>
-      <View style={{backgroundColor:Color.white}}>
+      <View style={{backgroundColor:Color.white, flex:1}}>
              <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
                  <Text style={styles.buttonText}>
                     Sign-Up
@@ -29,10 +29,10 @@ export default function Signup({props, navigation}) {
                    <Text style={{bottom:120, left:100, color:'white', fontSize:17, fontFamily:'OpenSans-Semibold'}}>CONNECT WITH FACEBOOK</Text>
 
              </View>
-             <View style={{width:150, backgroundColor:'black', height:1,top:80}}></View>
-             <Text style={{fontSize:20, color:'black', top:65, left:180 }}>OR</Text>
-             <View style={{width:150, backgroundColor:'black', height:1,top:53, left:240}}></View>
-             <View style={{width:350, height:70, backgroundColor:Color.YarB, top:85, alignSelf:'center', borderRadius:15,}}>
+             <View style={{width:150, backgroundColor:Color.lightgray, height:1,top:80}}></View>
+             <Text style={{fontSize:20, color:'black', position:'absolute', top:205, left:180, fontFamily:'SansBold' }}>OR</Text>
+             <View style={{width:150, backgroundColor:Color.lightgray, height:1,top:80, left:240}}></View>
+             <View style={{width:350, height:70, backgroundColor:Color.YarB, top:125, alignSelf:'center', borderRadius:15,}}>
                    
                    
                    <Text style={{top:25, left:70, color:'white', fontSize:17,fontFamily:'OpenSans-Semibold'}} onPress={()=>navigation.navigate('Login')}>SIGN-UP WITH YOUR EMAIL</Text>

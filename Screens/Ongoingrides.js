@@ -3,7 +3,8 @@ import React from 'react'
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient'
 import { Item } from 'react-native-paper/lib/typescript/components/List/List'
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 // import {  } from 'native-base'
 const Ongoing = [
@@ -13,7 +14,8 @@ const Ongoing = [
       P1:'Abohar',
       P2:'Kokhar',
       Model:'Cultus/AwGn-150',
-      Profile:require('../App/assets/Pic1.png')
+      Profile:require('../App/assets/Pic1.png'),
+      ride:require('../App/assets/car.png')
     },
     {
         id:2,
@@ -21,15 +23,18 @@ const Ongoing = [
         P1:'Sehwan',
         P2:'karachi',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic2.png')
+        Profile:require('../App/assets/Pic2.png'),
+        package:require('../App/assets/box.png')
       },
       {
         id:3,
         username:'Meta',
         P1:'cant',
-        P2:'N Karachi',
+        P2:'Karachi',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic3.png')
+        Profile:require('../App/assets/Pic3.png'),
+        
+        package:require('../App/assets/box.png')
       },
       {
         id:4,
@@ -37,7 +42,8 @@ const Ongoing = [
         P1:'multan',
         P2:'lahore',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic4.png')
+        Profile:require('../App/assets/Pic4.png'),
+        package:require('../App/assets/box.png')
       },
       {
         id:5,
@@ -45,7 +51,9 @@ const Ongoing = [
         P1:'quetta',
         P2:'murree',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic5.png')
+        Profile:require('../App/assets/Pic5.png'),
+        package:require('../App/assets/box.png')
+
       },
       {
         id:6,
@@ -53,7 +61,8 @@ const Ongoing = [
         P1:'kaghan',
         P2:'Kokhar',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic6.png')
+        Profile:require('../App/assets/Pic6.png'),
+        ride:require('../App/assets/car.png'),
       },
       {
         id:7,
@@ -61,7 +70,8 @@ const Ongoing = [
         P1:'kashmir',
         P2:'thar',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic1.png')
+        Profile:require('../App/assets/Pic1.png'),
+        package:require('../App/assets/box.png')
       },
       {
         id:8,
@@ -69,7 +79,8 @@ const Ongoing = [
         P1:'karachi',
         P2:'islamabad',
         Model:'Cultus/AwGn-150',
-        Profile:require('../App/assets/Pic2.png')
+        Profile:require('../App/assets/Pic2.png'),
+       
       },
 
 ]
@@ -115,8 +126,15 @@ export default function Ongoingrides({navigation}) {
         <Text style={styles.name}>{item.username}</Text>
         <Text style={styles.model}>{item.Model}</Text>
         <Text style={styles.P1}>{item.P1}</Text>
-        <View style={{width:1, height:75,top:20,left:280, backgroundColor:Color.darkgray}}></View>
+        <View style={{width:2, height:75,top:30,left:280, backgroundColor:Color.YarB}}>
+        <View style={{width:15, height:15, borderRadius:7.5, borderColor:Color.YarB, borderWidth:2, backgroundColor:Color.white , right:7, bottom:2}}></View>
+            <View style={{width:15, height:15, borderRadius:7.5, borderColor:Color.YarB, borderWidth:2, backgroundColor:Color.white , right:7, top:45}}></View>
+        </View>
         <Text style={styles.P2}>{item.P2}</Text>
+        <View style={{  flexDirection:'row', left:120}}>
+        <Image source={item.ride} style={{width:25,left:170,top:100, height:25}} ></Image>
+        <Image source={item.package} style={{width:25,left:145,top:100, height:25}} ></Image>
+        </View>
         {/* <View style={{paddingTop:120,}}></View> */}
       </View>
         {/* </View> */}
@@ -143,8 +161,8 @@ const styles = StyleSheet.create({
         width:50,
         height:50,
         borderRadius:25,
-        top:10,
-        left:10,
+        top:20,
+        left:20,
         position:'absolute'
     },
     name:{
@@ -152,30 +170,33 @@ const styles = StyleSheet.create({
         fontSize:15,
         top:90,
         textAlign:'left',
-       left:15,
+       left:20,
+       color:Color.YarB,
         position:'absolute'
     },
     P2:{
-        fontFamily:'OpenSans-Regular',
-        
+        fontFamily:'SansBold',
+        color:'black',
         textAlign:'left',
         left:220,
-        top:90,
+        top:100,
         position:'absolute'
     },
     P1:{
-        fontFamily:'OpenSans-Regular',
+        fontFamily:'SansBold',
         textAlign:'left',
+        color:'black',
         left:222,
-        top:25,
+        top:35,
         position:'absolute'
     },
     model:{
         top:115,
-        fontFamily:'SansBold',
+        fontFamily:'OpenSans-regular',
         color:Color.YarB,
         textAlign:'left',
-        left:15,
+        left:20,
+        fontSize:13,
         position:'absolute'
     }
     

@@ -11,7 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 // import Color from '../App/config/Color';
 
 
-export default function Profile() {
+export default function Profile({navigation}) {
   const [index, setIndex] = React.useState(0);
   return (
    
@@ -60,7 +60,9 @@ export default function Profile() {
        
         <View>
         <Text style={{fontFamily:'SansBold', top:10, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>About you</Text>
-          <Text style={{fontFamily:'OpenSans-Semibold', top:40, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          <Text 
+          onPress={()=>navigation.navigate('Bio')}
+          style={{fontFamily:'OpenSans-Semibold', top:40, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Write my mini bio
           </Text>
           <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:75, alignSelf:'center'}}></View>
@@ -76,22 +78,25 @@ export default function Profile() {
           </Text>
           <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:220, alignSelf:'center'}}></View>
           <Text style={{fontFamily:'SansBold', top:240, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Car</Text>
-          <Text style={{fontFamily:'OpenSans-Semibold', top:260, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+          <Text 
+          onPress={()=>navigation.navigate('License')}
+          style={{fontFamily:'OpenSans-Semibold', top:260, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
           Add car
           </Text>
         </View>
         {/* <Text style={{fontFamily:'SansBold', top:90, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}> Write My mini bio</Text> */}
       </TabView.Item>
       {/* <ScrollView horizontal={false} > */}
+      <ScrollView style={{}} showsVerticalScrollIndicator={false}>
       <TabView.Item style={{  width: '100%' }}>
       
-        <View>
+        <View style={{height:600}}>
         
-        <Text style={{fontFamily:'SansBold', top:10, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Your stats</Text>
+        <Text style={{fontFamily:'SansBold', top:10, left:10, color:Color.YarB, fontSize:15, }}>Your stats</Text>
           <Text style={{fontFamily:'OpenSans-Semibold', top:40, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Your rating
           </Text>
-          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:75, alignSelf:'center'}}></View>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:60, alignSelf:'center'}}></View>
           <Text style={{fontFamily:'SansBold', top:90, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Setting</Text>
           <Text style={{fontFamily:'OpenSans-Semibold', top:120, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Notification
@@ -102,7 +107,7 @@ export default function Profile() {
           <Text style={{fontFamily:'OpenSans-Semibold', top:180, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
           Postal address
           </Text>
-          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:220, alignSelf:'center'}}></View>
+          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:200, alignSelf:'center'}}></View>
           <Text style={{fontFamily:'SansBold', top:240, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>Money</Text>
           <Text style={{fontFamily:'OpenSans-Semibold', top:270, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Available fund
@@ -113,11 +118,27 @@ export default function Profile() {
           <Text style={{fontFamily:'OpenSans-Semibold', top:320, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Bank details
           </Text>
-          <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:345 , alignSelf:'center'}}></View>
+          {/* <View style={{width:360, height:1, backgroundColor:Color.lightgray, top:345 , alignSelf:'center'}}></View> */}
           <Text style={{fontFamily:'SansBold', top:350, left:10, color:Color.YarB, fontSize:15, position:'absolute'}}>About</Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:380, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Help
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:405, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            terms and condition
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:430, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Data protection
+          </Text>
+          <Text style={{fontFamily:'OpenSans-Semibold', top:455, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
+            Licenses
+          </Text>
+          <Text style={{fontFamily:'SansBold', top:490, alignSelf:'center', color:Color.YarB, fontSize:25, position:'absolute'}}>
+            Log out
+          </Text>
           </View>
           
       </TabView.Item>
+      </ScrollView>
       {/*    */}
     </TabView>
   </>

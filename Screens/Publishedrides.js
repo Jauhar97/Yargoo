@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image,ScrollView , FlatList,SafeAreaView, TextI
 import React from 'react'
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient'
-import { Item } from 'react-native-paper/lib/typescript/components/List/List'
+// import { Item } from 'react-native-paper/lib/typescript/components/List/List'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
 // import {  } from 'native-base'
@@ -27,7 +27,7 @@ const Ongoing = [
         id:3,
         username:'Meta',
         P1:'cant',
-        P2:'N Karachi',
+        P2:'Karachi',
         Model:'Cultus/AwGn-150',
         Profile:require('../App/assets/Pic3.png')
       },
@@ -115,10 +115,19 @@ export default function Publishedrides({navigation}) {
         <Text style={styles.name}>{item.username}</Text>
         <Text style={styles.model}>{item.Model}</Text>
         <Text style={styles.P1}>{item.P1}</Text>
-        <View style={{width:1, height:75,top:20,left:280, backgroundColor:Color.darkgray}}></View>
+        <View style={{width:2, height:75,top:30,left:280, backgroundColor:Color.YarB}}>
+        <View style={{width:15, height:15, borderRadius:7.5, borderColor:Color.YarB, borderWidth:2, backgroundColor:Color.white , right:7, bottom:2}}></View>
+            <View style={{width:15, height:15, borderRadius:7.5, borderColor:Color.YarB, borderWidth:2, backgroundColor:Color.white , right:7, top:45}}></View>
+        </View>
         <Text style={styles.P2}>{item.P2}</Text>
-        {/* <View style={{marginTop:120,}}></View> */}
+        <View style={{  flexDirection:'row', left:120}}>
+        <Image source={item.ride} style={{width:25,left:170,top:100, height:25}} ></Image>
+        <Image source={item.package} style={{width:25,left:145,top:100, height:25}} ></Image>
+        </View>
+        {/* <View style={{paddingTop:120,}}></View> */}
       </View>
+        {/* <View style={{marginTop:120,}}></View> */}
+     
         {/* </View> */}
         </>
       )}
@@ -140,43 +149,46 @@ const styles = StyleSheet.create({
         color:'white'
     },
     profile:{
-        width:50,
-        height:50,
-        borderRadius:25,
-        top:10,
-        left:10,
-        position:'absolute'
-    },
-    name:{
-        fontFamily:'SansBold',
-        fontSize:15,
-        top:90,
-        textAlign:'left',
-       left:15,
-        position:'absolute'
-    },
-    P2:{
-        fontFamily:'OpenSans-Regular',
-        
-        textAlign:'left',
-        left:220,
-        top:90,
-        position:'absolute'
-    },
-    P1:{
-        fontFamily:'OpenSans-Regular',
-        textAlign:'left',
-        left:222,
-        top:25,
-        position:'absolute'
-    },
-    model:{
-        top:115,
-        fontFamily:'SansBold',
-        color:Color.YarB,
-        textAlign:'left',
-        left:15,
-        position:'absolute'
-    }
+      width:50,
+      height:50,
+      borderRadius:25,
+      top:20,
+      left:20,
+      position:'absolute'
+  },
+  name:{
+      fontFamily:'SansBold',
+      fontSize:15,
+      top:90,
+      textAlign:'left',
+     left:20,
+     color:Color.YarB,
+      position:'absolute'
+  },
+  P2:{
+      fontFamily:'SansBold',
+      color:'black',
+      textAlign:'left',
+      left:220,
+      top:100,
+      position:'absolute'
+  },
+  P1:{
+      fontFamily:'SansBold',
+      textAlign:'left',
+      color:'black',
+      left:222,
+      top:35,
+      position:'absolute'
+  },
+  model:{
+      top:115,
+      fontFamily:'OpenSans-regular',
+      color:Color.YarB,
+      textAlign:'left',
+      left:20,
+      fontSize:13,
+      position:'absolute'
+  }
     
 })
