@@ -16,10 +16,14 @@ import Coluor from './Sign up for driver/Coluor'
 import ColorPicker from './Sign up for driver/ColorPicker'
 import Credentialforuser from './Sign up for User/Credentialforuser'
 import ProfileforUser from './Sign up for User/ProfileforUser'
+import { AuthProvider } from './navigation/AuthProvider'
+import Routes from './navigation/Routes'
 
 export default function App() {
   return (
-<StackScreen></StackScreen>
+    <AuthProvider>
+       <Routes></Routes>
+    </AuthProvider>
 )
 }
 

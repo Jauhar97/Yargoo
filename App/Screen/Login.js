@@ -1,10 +1,13 @@
 import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Color from '../config/Color';
 import CurrentLocation from './CurrentLocation';
+import { AuthContext } from '../../navigation/AuthProvider';
 export default function Login({props, navigation}) {
+
+    const {login}=useContext(AuthContext);
   return (
     <SafeAreaView>
         <View >
@@ -29,9 +32,11 @@ export default function Login({props, navigation}) {
              </TextInput>
             <Text style={{color:Color.YarB, fontFamily:'SansBold', left:25, top:50}}>Forget Password</Text>
             <View style={{width:150, height:60, backgroundColor:Color.YarB, borderRadius:30, alignSelf:'center', top:200, alignContent:'center', alignItems:'center'}}
-            onStartShouldSetResponder={()=>navigation.navigate('CurrentLocation')}
+            onStartShouldSetResponder={()=>  login( email, password )}
             >
-                <Text style={{fontFamily:'SansBold', fontSize:20, color:'white',top:15 }}>Login</Text>
+                <Text style={{fontFamily:'SansBold', fontSize:20, color:'white',top:15 }}
+                
+                >Login</Text>
             </View>
         </View>
     </SafeAreaView>

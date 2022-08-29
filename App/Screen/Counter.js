@@ -25,7 +25,19 @@ export default function Counter({prop, navigation}) {
         console.log("onChange Counter:", counter);
         }}
         />
-        <View style={{width:50, height:50, backgroundColor:Color.YarB, borderRadius:25, left:330, top:100}}
+         <Text style={{ color:Color.YarB,fontFamily:'SansBold',fontSize:25, left:10, top:40}}>How many passenger can you take?</Text>
+       
+        <CounterInput
+        
+        style={{alignSelf:'center', top:100,backgroundColor:'transparent', elevation:0, padding:0}}
+        decreaseButtonBackgroundColor={Color.YarB}
+        increaseButtonBackgroundColor={Color.YarB}
+        horizontal={true}
+        onChange={(counter) => {
+        console.log("onChange Counter:", counter);
+        }}
+        />
+        <View style={{width:50, height:50, backgroundColor:Color.YarB, borderRadius:25, left:330, top:150}}
             onStartShouldSetResponder={()=> navigation.navigate('Extrapackage')}
             >
             <AntDesign name='arrowright' color={'white'} size={30} style={{top:10, left:10}}></AntDesign>
