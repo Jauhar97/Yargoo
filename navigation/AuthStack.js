@@ -43,6 +43,7 @@ import Publishedrides from '../Screens/Publishedrides';
 import ProfileforUser from '../Sign up for User/ProfileforUser'
 import Credentialforuser from '../Sign up for User/Credentialforuser'
 import Bio from '../Screens/Bio';
+import Signup2 from '../App/Screen/Signup2';
 const Stack = createNativeStackNavigator();
 
 
@@ -52,10 +53,11 @@ const AuthStack = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
-    <Stack.Screen name='Signup' component={Signup}/>
                 <Stack.Screen name='tabs' component={MyTabs}/>
-                {/* <Stack.Screen name='Signup' component={Signup}/> */}
-                <Stack.Screen name='Bio' component={Bio}/>
+               <Stack.Screen name='login' component={Login}></Stack.Screen>
+               
+               <Stack.Screen name='Language' component={Language}></Stack.Screen>
+               <Stack.Screen name='Bio' component={Bio}/>
                 <Stack.Screen name='ProfileforUser' component={ProfileforUser}/>
                 <Stack.Screen name='Credentialforuser' component={Credentialforuser}/>
                 <Stack.Screen name='Searchpick' component={Searchpick}/>
@@ -94,7 +96,6 @@ const AuthStack = () => {
                 <Stack.Screen name='Seacrh' component={Seacrh}/>
                 <Stack.Screen name='Login' component={Login}/>
                 <Stack.Screen name='CurrentLocation' component={CurrentLocation}/>
-                <Stack.Screen name='Language' component={Language}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

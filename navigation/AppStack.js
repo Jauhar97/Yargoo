@@ -43,6 +43,7 @@ import Publishedrides from '../Screens/Publishedrides';
 import ProfileforUser from '../Sign up for User/ProfileforUser'
 import Credentialforuser from '../Sign up for User/Credentialforuser'
 import Bio from '../Screens/Bio';
+import Signup2 from '../App/Screen/Signup2';
 const Stack = createNativeStackNavigator();
 
 
@@ -52,49 +53,15 @@ const AppStack = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
-    <Stack.Screen name='Signup' component={Signup}/>
-                <Stack.Screen name='tabs' component={MyTabs}/>
-                {/* <Stack.Screen name='Signup' component={Signup}/> */}
-                <Stack.Screen name='Bio' component={Bio}/>
-                <Stack.Screen name='ProfileforUser' component={ProfileforUser}/>
-                <Stack.Screen name='Credentialforuser' component={Credentialforuser}/>
-                <Stack.Screen name='Searchpick' component={Searchpick}/>
-                <Stack.Screen name='Ongoingrides' component={Ongoingrides}/>
-                <Stack.Screen name='Publishedrides' component={Publishedrides}/>
-                <Stack.Screen name='Searchdrop' component={Searchdrop}/>
-                <Stack.Screen name='ChatScreen' component={ChatScreen}/>
-                <Stack.Screen name='Card' component={Card}/>
-                <Stack.Screen name='Credentials' component={Credentials}/>
-                <Stack.Screen name='CardOpen' component={CardOpen}/>
-                {/* <Stack.Screen name='Timefilter' component={Timefilter}/> */}
-                <Stack.Screen name='Profileinfo' component={Profileinfo}/>
-                <Stack.Screen name='Basicfilter' component={Basicfilter}/>
-                {/* <Stack.Screen name='Datefilter' component={Datefilter}/> */}
-                <Stack.Screen name='License' component={License}/>
-                <Stack.Screen name='Brand' component={Brand}/>
-                <Stack.Screen name='Model' component={Model}/>
-                <Stack.Screen name='Kind' component={Kind}/>
-                <Stack.Screen name='Coluor' component={Coluor}/>
-                <Stack.Screen name='ColorPicker' component={ColorPicker}/>
-                <Stack.Screen name='Extrapackage' component={Extrapackage}/>
-                <Stack.Screen name='CurrentRide' component={CurrentRide}/>
-                <Stack.Screen name='Rideinfo' component={Rideinfo}/>
-                <Stack.Screen name='Publish' component={Publish}/>
-                <Stack.Screen name='Description' component={Description}/>
-                <Stack.Screen name='Price' component={Price}/>
-                <Stack.Screen name='Counter' component={Counter}/>
-                <Stack.Screen name='Calender' component={Calender}/>
-                <Stack.Screen name='Addstop' component={Addstop}/>
-                <Stack.Screen name='Stop' component={Stop}/>
-                <Stack.Screen name='Dropoff' component={Dropoff}/>
-                <Stack.Screen name='Inbox' component={Inbox}/>
-                <Stack.Screen name='Offer' component={Offer}/>
-                <Stack.Screen name='Profile' component={Profile}/>
-                <Stack.Screen name='Ride' component={Ride}/>
-                <Stack.Screen name='Seacrh' component={Seacrh}/>
+               
+                
+                <Stack.Screen name='Signup' component={Signup}></Stack.Screen>
+                <Stack.Screen name='Signup2' component={Signup2}></Stack.Screen>
                 <Stack.Screen name='Login' component={Login}/>
-                <Stack.Screen name='CurrentLocation' component={CurrentLocation}/>
-                <Stack.Screen name='Language' component={Language}/>
+                <Stack.Screen name='MyTabs' component={MyTabs}></Stack.Screen>
+                
+                <Stack.Screen name='Language' component={Language}></Stack.Screen>
+                
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet,
 Text, 
 View,
@@ -7,12 +7,14 @@ Image} from 'react-native';
 import { Tab , TabView} from "@rneui/themed";
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient';
+import { AuthContext } from '../navigation/AuthProvider';
 
 // import Color from '../App/config/Color';
 
 
 export default function Profile({navigation}) {
   const [index, setIndex] = React.useState(0);
+  const {logout} = useContext(AuthContext);
   return (
    
 <View style={{backgroundColor:'white', flex:1}}>
@@ -132,7 +134,9 @@ export default function Profile({navigation}) {
           <Text style={{fontFamily:'OpenSans-Semibold', top:455, left:50, color:Color.YarB, fontSize:15, position:'absolute'}}>
             Licenses
           </Text>
-          <Text style={{fontFamily:'SansBold', top:490, alignSelf:'center', color:Color.YarB, fontSize:25, position:'absolute'}}>
+          <Text style={{fontFamily:'SansBold', top:490, alignSelf:'center', color:Color.YarB, fontSize:25, position:'absolute'}}
+          onPress={()=>logout()}
+          >
             Log out
           </Text>
           </View>

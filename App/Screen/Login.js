@@ -1,18 +1,21 @@
 import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Color from '../config/Color';
 import CurrentLocation from './CurrentLocation';
 import { AuthContext } from '../../navigation/AuthProvider';
 export default function Login({props, navigation}) {
-
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const {login}=useContext(AuthContext);
   return (
     <SafeAreaView>
         <View >
              <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
-                <AntDesign name='arrowleft' color={'white'} size={30} style={{top:20, left:10}}></AntDesign>
+                <AntDesign name='arrowleft' color={'white'} size={30} style={{top:20, left:10}}
+                onPress={()=>navigation.goBack()}
+                ></AntDesign>
                  <Text style={styles.buttonText}>
                     Login
                  </Text>
@@ -20,6 +23,7 @@ export default function Login({props, navigation}) {
              <Text style={styles.headtext}>What's your email and password</Text>
              <TextInput
              placeholder='Email'
+             onChangeText={(userEmail)=>setEmail(userEmail)}
              style={styles.texti1}
              >
 
@@ -27,12 +31,13 @@ export default function Login({props, navigation}) {
              <TextInput
              placeholder='Password'
              placeholderTextColor={'grey'}
+             onChangeText={(userpassword)=>setPassword(userpassword)}
              style={styles.texti1}
              >
              </TextInput>
             <Text style={{color:Color.YarB, fontFamily:'SansBold', left:25, top:50}}>Forget Password</Text>
             <View style={{width:150, height:60, backgroundColor:Color.YarB, borderRadius:30, alignSelf:'center', top:200, alignContent:'center', alignItems:'center'}}
-            onStartShouldSetResponder={()=>  login( email, password )}
+            onStartShouldSetResponder={()=> navigation.navigate('MyTabs')}
             >
                 <Text style={{fontFamily:'SansBold', fontSize:20, color:'white',top:15 }}
                 
