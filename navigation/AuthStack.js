@@ -53,6 +53,7 @@ const AuthStack = () => {
             <Stack.Navigator screenOptions={{
     headerShown: false
   }} >
+                 <Stack.Screen name='Profileinfo' component={Profileinfo}/>
                 <Stack.Screen name='tabs' component={MyTabs}/>
                <Stack.Screen name='login' component={Login}></Stack.Screen>
                
@@ -69,7 +70,7 @@ const AuthStack = () => {
                 <Stack.Screen name='Credentials' component={Credentials}/>
                 <Stack.Screen name='CardOpen' component={CardOpen}/>
                 {/* <Stack.Screen name='Timefilter' component={Timefilter}/> */}
-                <Stack.Screen name='Profileinfo' component={Profileinfo}/>
+               
                 <Stack.Screen name='Basicfilter' component={Basicfilter}/>
                 {/* <Stack.Screen name='Datefilter' component={Datefilter}/> */}
                 <Stack.Screen name='License' component={License}/>

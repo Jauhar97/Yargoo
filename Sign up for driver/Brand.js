@@ -1,11 +1,61 @@
-import { StyleSheet, Text, View , TextInput} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View , TextInput, FlatList, TouchableOpacity} from 'react-native'
+import React, { useEffect , useState } from 'react'
 import Color from '../App/config/Color'
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import firestore from '@react-native-firebase/firestore';
+import Entypo from 'react-native-vector-icons/Entypo'
+import { Value } from 'react-native-reanimated'
+// import firebase from '@react-native-firebase';
+
 
 export default function Brand({prop, navigation}) {
+  
+    const Data=[
+        {
+        id:1,
+        brand:'Maruti',
+        },
+        {
+        id:2,
+        brand:'Hyundai',
+        },
+        {
+        id:3,
+        brand:'Honda',
+        },
+        {
+        id:4,
+        brand:'Ford',
+            },
+        {
+        id:5,
+        brand:'Tata',
+        },
+        {
+        id:6,
+        brand:'More',
+        },
+                            
+    ]
+    
+    const [brand, setBrand] = useState('');
+
+    const onPressButton=(Value) =>{
+      // console.log(`Brand = ` , _brand )
+      firestore()
+      .collection('Riderdetail')
+      
+      .add({
+        brand:Value, 
+        
+      })
+      .then(() => {
+        navigation.navigate('Model')
+      });
+    }    
   return (
+    
     <View style={{backgroundColor:Color.white, flex:1}}>
          <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
                 <AntDesign name='arrowleft' color={'white'} size={30} style={{top:20, left:10}}></AntDesign>
@@ -19,42 +69,33 @@ export default function Brand({prop, navigation}) {
      <View>
         <AntDesign name='search1' size={30} style={{top:30, left:20}}></AntDesign>
         <TextInput
-     placeholder='Plate number'
+     placeholder='Search'
      style={styles.texti1}
      >
     </TextInput>    
      </View>
      <Text style={{fontFamily:'SansBold', fontSize:30, color:Color.YarB, left:60, bottom:40}}>OR</Text>
      <Text style={{fontFamily:'SansBold', fontSize:20, color:Color.darkgray, left:25, bottom:20}}>Popular makes</Text>
-    <View style={{flexDirection:'row',}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Maruti</Text>
-        <AntDesign name='right' color={Color.YarB} size={20} style={{left:280, top:5 }}
-        onPress={()=>navigation.navigate('Model')}
-        ></AntDesign>
-    </View>
-    <View style={{flexDirection:'row', margintop:10}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Hyundai</Text>
-        <AntDesign name='right' color={Color.YarB} size={20} style={{left:267, top:5 }}></AntDesign>
-    </View>
-    <View style={{flexDirection:'row'}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Honda</Text>
-        <AntDesign name='right' color={Color.YarB} size={20} style={{left:285, top:5 }}></AntDesign>
-    </View>
-    <View style={{flexDirection:'row'}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Ford</Text>
-        <AntDesign name='right' color={Color.YarB} size={20} style={{left:305, top:5 }}></AntDesign>
-    </View>
-    <View style={{flexDirection:'row'}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>Tata</Text>
-        <AntDesign name='right' color={Color.YarB} size={20} style={{left:305, top:5 }}></AntDesign>
-    </View>
-    <View style={{flexDirection:'row'}}>
-        <Text style={{fontFamily:'SansBold', fontSize:20, left:25, color:Color.YarB}}>More</Text>
-
-    </View>
-    
-    
-
+    <FlatList
+    data={Data}
+    keyExtractor={(item)=>item.brand }
+    renderItem={({item}) =>(
+      <>
+      {/* <TouchableOpacity> */}
+        <View style={{flexDirection:'row'}}>
+            <View style={{width:100}}>
+                <TouchableOpacity
+                onPress={()=>onPressButton(item.brand)}  
+                >
+                    <Text style={styles.text}>{item.brand}</Text>
+                </TouchableOpacity>
+            </View>
+          <Entypo name='chevron-right' size={30} color={Color.YarB} style={{left:240,top:9}}/>
+        </View>
+      {/* </TouchableOpacity> */}
+      </>
+    )}>
+    </FlatList>
     </View>
   )
 }
@@ -67,6 +108,13 @@ const styles = StyleSheet.create({
         top:-18,
         bottom:25,
         color:'white'
+    },
+    text:{
+        fontFamily:'OpenSans-Regular',
+        fontSize:20,
+        left:20,
+        padding:10,
+        color:Color.YarB
     },
     texti1:{
         // backgroundColor:Color.lightgray,

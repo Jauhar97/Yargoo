@@ -1,12 +1,21 @@
-import { StyleSheet, Text, View , TextInput, TouchableOpacity} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View , FlatList, TouchableOpacity} from 'react-native'
+import React,{ useState } from 'react'
 import Color from '../App/config/Color'
 import { RadioButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import Entypo from 'react-native-vector-icons/Entypo'
+
 
 export default function ColorPicker({prop, navigation}) {
+    const Data=[
+{
+    id:1,
+    text:"1",
+}
+    ]
     const [checked, setChecked] = React.useState('first');
+   
   return (
     <View style={{backgroundColor:Color.white, flex:1}}>
       <LinearGradient start={{x: 0.5, y: 1.5}} end={{x:0.8, y: 0.2}} colors={['#0086CF','#4FA0A5']} style={{height:70, }}>
@@ -18,7 +27,43 @@ export default function ColorPicker({prop, navigation}) {
     <View>
    <Text  style={{fontFamily:'SansBold', fontSize:30, color:Color.YarB, left:15, top:10}}>What's color of your vehicle ?</Text>
     </View>
-    <TouchableOpacity
+    <FlatList
+     data={Data}
+     keyExtractor={(item)=>item.text }
+     renderItem={({item}) =>(
+       <>
+       {/* <TouchableOpacity> */}
+         <View style={{flexDirection:'row', flex:1}}>
+             <View style={{width:100}}>
+                 <TouchableOpacity
+                    style={{flexDirection:'row'}}
+                        >
+                    <View  
+                    style={{left:20,top:30,width:30, height:30, borderRadius:15, backgroundColor:Color.YarB, elevation:10}}
+                    >
+
+                    </View>
+                <View style={{left:300, top:20}}>
+                    <RadioButton.Android
+                    style={{height: 100}}
+                    uncheckedColor={"black"}
+                    color={'black'}
+                    value="first"
+                    status={ checked === 'first' ? 'checked' : 'setChecked' }
+                    onPress={() => setChecked('first')}
+                    />
+                </View>
+                </TouchableOpacity>
+            </View>
+                <Entypo name='chevron-right' size={30} color={Color.YarB} style={{left:240,top:9}}/>
+            </View>
+       {/* </TouchableOpacity> */}
+       </>
+     )}
+    >
+
+    </FlatList>
+    {/* <TouchableOpacity
     style={{flexDirection:'row'}}
     >
         <View  
@@ -172,11 +217,11 @@ export default function ColorPicker({prop, navigation}) {
     </TouchableOpacity>
     <View
     style={{width:250, height:60, backgroundColor:Color.YarB,borderRadius:30, top:190, alignSelf:'center'}}
-    onStartShouldSetResponder={()=>navigation.navigate('Profile')}
+    onStartShouldSetResponder={()=>navigation.navigate('tabs')}
     >
         <Text style={{color:'white', fontFamily:'SansBold', alignSelf:'center', top:8, fontSize:30}}>Save</Text>
 
-    </View>
+    </View> */}
     </View>
   )
 }

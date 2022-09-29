@@ -61,6 +61,7 @@ export default function Login({props, navigation}) {
                     onPress={()=>navigation.navigate('Login')}
                     >
                         Sign in
+                        
                     </Text>
             </TouchableOpacity>
             <TouchableOpacity
