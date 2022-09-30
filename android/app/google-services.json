@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "925972749242",
+    "project_id": "yarrgo-web",
+    "storage_bucket": "yarrgo-web.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925972749242:android:3a9045f1a98a74694adb83",
+        "android_client_info": {
+          "package_name": "com.yargoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925972749242-4c5agiq5fep09kt17ggdu8snobo56rs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcartmX6g708SgKbR6M9XopfkZ1oxuJ2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925972749242-4c5agiq5fep09kt17ggdu8snobo56rs6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
